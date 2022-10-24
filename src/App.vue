@@ -6,8 +6,6 @@ import { onMounted, ref } from "vue";
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from "./components/HelloWorld.vue";
 
-console.log(decodeURI);
-
 const arr: string[] = ["a", "2", "b"];
 
 const index = ref<number>(0);
