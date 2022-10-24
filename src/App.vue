@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { findIndex } from "@fyeeme/util";
-import { userApi } from "@fyeeme/api";
+import { userApi, productApi, commentApi, categoryApi } from "@fyeeme/api";
 import { onMounted, ref } from "vue";
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
@@ -20,10 +20,17 @@ const getUser = (id: number) => {
       console.log("error:", err);
     });
 };
+
+const getProduct = (id: number) => {
+  productApi.get(id).then((res) => {
+    console.log({ res });
+  });
+};
 onMounted(() => {
   index.value = findIndex(arr, "b");
   getUser(5);
   getUser(10);
+  getProduct(6);
 });
 </script>
 
